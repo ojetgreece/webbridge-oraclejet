@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class Chooser extends javax.swing.JPanel
 {
@@ -146,12 +147,19 @@ public class Chooser extends javax.swing.JPanel
             SampleWebserver.serve();
         }
         
-        HybridNavigationController controller = new HybridNavigationController();
-        HybridSwing uiFrame = new HybridSwing();
-        uiFrame.setNavigationController(controller);
-        controller.setUi(uiFrame);
-        
-        uiFrame.setVisible(true);
+        try
+        {
+            HybridNavigationController controller = new HybridNavigationController();
+            HybridSwing uiFrame = new HybridSwing();
+            uiFrame.setNavigationController(controller);
+            controller.setUi(uiFrame);
+
+            uiFrame.setVisible(true);
+        }
+        catch (NoClassDefFoundError err)
+        {
+            JOptionPane.showMessageDialog(null, "Error starting application, please make sure you have JavaFX installed.");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton3ActionPerformed

@@ -14,7 +14,7 @@ public class AboutForm extends javax.swing.JPanel
         jTextPane1.setContentType("text/html");
         jTextPane1.setEditable(false);
         jTextPane1.setText("<html>\n<p>This application was created to demonstrate integration of desktop Swing applications with browser based applications.</p>\n<p>"
-                + "If you have questions or feedback for this sample, please drop us a line: <a href=\"https://www.trion.de/#pk_campaign=jmagsample\">trion.de</a> or create a PR on github.</p>\n</html>");
+                + "If you have questions or feedback for this sample, please drop us a line: <a href=\"https://www.trion.de/#pk_campaign=ojwebb\">trion.de</a> or create a PR on github.</p>\n</html>");
         jTextPane1.addHyperlinkListener(new HyperlinkListener()
         {
             @Override

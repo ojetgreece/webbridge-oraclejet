@@ -13,6 +13,7 @@ public class LegacySwing extends javax.swing.JFrame
     public LegacySwing()
     {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         contentPanel.setLayout(new BorderLayout());
     }
     
@@ -170,7 +171,7 @@ public class LegacySwing extends javax.swing.JFrame
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton4ActionPerformed
     {//GEN-HEADEREND:event_jButton4ActionPerformed
-        System.exit(0);
+        this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2ActionPerformed

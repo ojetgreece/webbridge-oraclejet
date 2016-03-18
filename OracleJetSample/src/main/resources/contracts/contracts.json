@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "name": "Mark",
+        "company": "ACME corp",
+        "companyId": "1",
+        "active": true
+    },
+    {
+        "id": "2",
+        "name": "Steve",
+        "company": "Wonder inc",
+        "companyId": "2",
+        "active": true
+    },
+    {
+        "id": "3",
+        "name": "Marissa",
+        "company": "Sun shine",
+        "companyId": "3",
+        "active": false
+    },
+    {
+        "id": "4",
+        "name": "Olga",
+        "company": "East trading corp.",
+        "companyId": "4",
+        "active": true
+    },
+    {
+        "id": "5",
+        "name": "Svetlana",
+        "company": "East trading corp.",
+        "companyId": "4",
+        "active": false
+    },
+    {
+        "id": "6",
+        "name": "Olivier",
+        "company": "French toast",
+        "companyId": "5",
+        "active": true
+    }
+]

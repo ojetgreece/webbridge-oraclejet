@@ -1,0 +1,54 @@
+<div> <!-- wrapper div b/c otherwise switching the view gives an error, assuming this is a bug in ojTable -->
+    <br />
+    <div>
+        This is a sample of an HTTP resource: The data is loaded using HTTP/Ajax calls no matter whether embedded in the Swing application or running native. 
+    </div>
+    <br/>
+    <table id="contractTable" summary="List of contracts" aira-label="Contract table"
+           data-bind="ojComponent:
+               {component: 'ojTable',
+                data: contractDataSource,
+                rootAttributes: {'style':'width: 100%;'},
+                columnsDefault: {sortable: 'enabled'},
+                columns: [
+                    {headerText: 'Name', field: 'name'},
+                    {headerText: 'Company', field: 'company'},
+                    {headerText: 'Action',  template: 'action' }
+                ]}">
+    </table>
+
+    <script type="text/html" id="action">
+        <td class="buttons-container">
+            <div>
+                <input data-bind="ojComponent: {component: 'ojSwitch', value: active}" />
+                <input type="button" data-bind="visible: active(), click: $parent.buttonClick, ojComponent: {component: 'ojButton', label: 'Send mail'}"/>
+            </div>
+            <span> Contract is </span>
+            <span data-bind="text: ((active()) ? 'active' : 'inactive')"></span>
+
+            <div style="display:none;" class="mailDialog" title="Send mail to ... " 
+                 data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide' }">
+                <div class="oj-dialog-header oj-helper-clearfix" aria-labelledby="dialogTitleId">
+                    <span id="dialogTitleId" class="oj-dialog-title">Send mail to <em><span data-bind="text: name"></span>, <span data-bind="text: company"></span></em></span> 
+                </div>
+                <div class="oj-dialog-body">
+                    <div class="form-container" class="oj-form">
+                        <label for="input">Subject</label>
+                        <input class="input" data-bind="ojComponent: {component: 'ojInputText', value:''}"><br/>
+                        <label for="input">CC</label>
+                        <input class="input" data-bind="ojComponent: {component: 'ojInputText', value:''}"><br/>
+                        <label for="resizeBoth">Body</label>
+                        <textarea rows="8" cols="20" class="resizeNone" 
+                                  style="resize: none;"
+                                  data-bind="ojComponent: {component: 'ojTextArea'}" ></textarea>
+                    </div>
+                </div>
+                <div class="oj-dialog-footer">
+                    <button id="okButton" data-bind="click: $parent.modalClick, ojComponent: {component: 'ojButton', label: 'Cancel'}"></button>
+                    <button id="okButton" data-bind="click: $parent.modalClick, ojComponent: {component: 'ojButton', label: 'Send it!'}"></button>
+                </div>
+            </div>
+        </td>
+    </script>
+
+</div>

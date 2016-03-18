@@ -1,0 +1,4 @@
+.demo-appheader-toolbar-container, div.demo-appheader
+{
+    display: none !important;
+}

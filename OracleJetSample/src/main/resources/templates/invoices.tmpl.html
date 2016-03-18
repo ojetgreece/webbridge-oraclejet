@@ -1,0 +1,29 @@
+<div>
+<br/>
+    This is a sample of a resource that gets data injected from the surrounding API. It is implemented either as native JavaScript or provided by the Java Swing application. 
+</div>
+<br/>
+<div>
+    <table id="contractTable" summary="List of invoices" aira-label="Invoice table"
+           data-bind="ojComponent:
+               {component: 'ojTable',
+                data: invoiceDataSource,
+                rootAttributes: {'style':'width: 100%;'},
+                columnsDefault: {sortable: 'enabled'},
+                columns: [
+                    {headerText: 'Number', field: 'number'},
+                    {headerText: 'Date', field: 'date'},
+                    {headerText: 'Company', field: 'company'},
+                    {headerText: 'Action',  template: 'action' }
+                ]}">
+    </table>
+    
+    <script type="text/html" id="action">
+        <td class="buttons-container">
+            <div>
+                <input type="button" data-bind="visible: (!paid()), click: $parent.markPaid, ojComponent: {component: 'ojButton', label: 'Mark paid'}"/>
+                <span data-bind="visible: paid">paid</span>
+            </div>
+        </td>
+    </script>
+</div>
